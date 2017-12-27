@@ -9,3 +9,8 @@ headers = {'content-type': 'application/json'}
 response = requests.request("GET", url, headers=headers, params=querystring)
 
 print(response.text)
+
+username = response.json().get('UserName')
+password = response.json().get('Content')
+
+print(username + " : " + password)
